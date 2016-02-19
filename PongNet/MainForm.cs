@@ -87,8 +87,8 @@ namespace PongNet
             {
                 timer.Stop();
 
-                var gameOver = MessageBox.Show("Your score: " + points, "Game Over", MessageBoxButtons.OK);
-                if (gameOver == System.Windows.Forms.DialogResult.OK)
+                DialogResult result = MessageBox.Show("Your score: " + points, "Game Over", MessageBoxButtons.OK);
+                if (result == System.Windows.Forms.DialogResult.OK)
                 {
                     Application.Restart();
                 }
@@ -108,7 +108,6 @@ namespace PongNet
         {
             MoveBall();
             Refresh();
-            Console.WriteLine("X speed: " + axisXSpeed + " Y speed: " + axisYSpeed);
         }
 
         private void Play_Click(object sender, EventArgs e)
