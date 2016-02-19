@@ -7,9 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace PongNet
 {
+
+    
+
     public partial class MainForm : Form
     {
 
@@ -25,6 +29,9 @@ namespace PongNet
         public MainForm()
         {
             InitializeComponent();
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
             platform = new Rectangle(182, 400, 120, 40);
             ball = new Rectangle(new Random().Next(50, 450), 20, 25, 25);
             SetSpeed(10);
@@ -154,5 +161,17 @@ namespace PongNet
             ResetGame();
             SetSpeed(40);
         }
+    }
+
+    internal static class NativeWinAPI
+    {
+        internal static readonly int GWL_EXSTYLE = -20;
+        internal static readonly int WS_EX_COMPOSITED = 0x02000000;
+
+        [DllImport("user32")]
+        internal static extern int GetWindowLong(IntPtr hWnd, int nIndex);
+
+        [DllImport("user32")]
+        internal static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
     }
 }
