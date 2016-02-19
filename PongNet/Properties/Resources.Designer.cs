@@ -63,10 +63,20 @@ namespace PongNet.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SpaceWall {
+        internal static System.Drawing.Bitmap MyWall {
             get {
-                object obj = ResourceManager.GetObject("SpaceWall", resourceCulture);
+                object obj = ResourceManager.GetObject("MyWall", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon PongBall {
+            get {
+                object obj = ResourceManager.GetObject("PongBall", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         

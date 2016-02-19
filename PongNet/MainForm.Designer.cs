@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.canvasPanel = new System.Windows.Forms.Panel();
+            this.platformBox = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,21 +47,33 @@
             this.Play = new System.Windows.Forms.Button();
             this.Score = new System.Windows.Forms.Label();
             this.CountLabel = new System.Windows.Forms.Label();
-            this.platformBox = new System.Windows.Forms.PictureBox();
             this.canvasPanel.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.platformBox)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // canvasPanel
             // 
-            this.canvasPanel.BackColor = System.Drawing.Color.LightGray;
+            this.canvasPanel.BackColor = System.Drawing.Color.Transparent;
             this.canvasPanel.Controls.Add(this.platformBox);
             this.canvasPanel.Location = new System.Drawing.Point(0, 24);
             this.canvasPanel.Margin = new System.Windows.Forms.Padding(0);
             this.canvasPanel.Name = "canvasPanel";
-            this.canvasPanel.Size = new System.Drawing.Size(484, 481);
+            this.canvasPanel.Size = new System.Drawing.Size(484, 479);
             this.canvasPanel.TabIndex = 0;
+            // 
+            // platformBox
+            // 
+            this.platformBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.platformBox.Image = global::PongNet.Properties.Resources.Stripe;
+            this.platformBox.Location = new System.Drawing.Point(0, 440);
+            this.platformBox.Margin = new System.Windows.Forms.Padding(0);
+            this.platformBox.Name = "platformBox";
+            this.platformBox.Size = new System.Drawing.Size(484, 40);
+            this.platformBox.TabIndex = 0;
+            this.platformBox.TabStop = false;
+            this.platformBox.Paint += new System.Windows.Forms.PaintEventHandler(this.PaintCanvas);
+            this.platformBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MovePlatform);
             // 
             // menuStrip1
             // 
@@ -176,7 +190,7 @@
             // 
             this.Play.BackColor = System.Drawing.SystemColors.Control;
             this.Play.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Play.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Play.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Play.Location = new System.Drawing.Point(50, 534);
             this.Play.Margin = new System.Windows.Forms.Padding(0);
             this.Play.Name = "Play";
@@ -189,7 +203,7 @@
             // Score
             // 
             this.Score.BackColor = System.Drawing.SystemColors.Control;
-            this.Score.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Score.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Score.Location = new System.Drawing.Point(281, 534);
             this.Score.Name = "Score";
             this.Score.Size = new System.Drawing.Size(94, 40);
@@ -200,7 +214,7 @@
             // CountLabel
             // 
             this.CountLabel.BackColor = System.Drawing.SystemColors.Control;
-            this.CountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CountLabel.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CountLabel.Location = new System.Drawing.Point(370, 534);
             this.CountLabel.Name = "CountLabel";
             this.CountLabel.Size = new System.Drawing.Size(80, 40);
@@ -208,31 +222,19 @@
             this.CountLabel.Text = "0";
             this.CountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // platformBox
-            // 
-            this.platformBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.platformBox.Image = global::PongNet.Properties.Resources.Stripe;
-            this.platformBox.Location = new System.Drawing.Point(0, 440);
-            this.platformBox.Margin = new System.Windows.Forms.Padding(0);
-            this.platformBox.Name = "platformBox";
-            this.platformBox.Size = new System.Drawing.Size(484, 40);
-            this.platformBox.TabIndex = 0;
-            this.platformBox.TabStop = false;
-            this.platformBox.Paint += new System.Windows.Forms.PaintEventHandler(this.PaintCanvas);
-            this.platformBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MovePlatform);
-            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.BackgroundImage = global::PongNet.Properties.Resources.SpaceWall;
+            this.BackgroundImage = global::PongNet.Properties.Resources.MyWall;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(484, 611);
             this.Controls.Add(this.CountLabel);
             this.Controls.Add(this.Score);
             this.Controls.Add(this.Play);
             this.Controls.Add(this.canvasPanel);
             this.Controls.Add(this.menuStrip1);
-            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(500, 650);
@@ -242,9 +244,9 @@
             this.Text = "Pong";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.canvasPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.platformBox)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.platformBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

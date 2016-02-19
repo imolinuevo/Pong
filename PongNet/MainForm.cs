@@ -55,7 +55,7 @@ namespace PongNet
         private void PaintCanvas(object sender, PaintEventArgs e)
         {
             graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            graphics.FillRectangle(new SolidBrush(Color.DimGray), platform);
+            graphics.FillRectangle(new SolidBrush(Color.Black), platform);
             graphics.FillEllipse(new SolidBrush(Color.Black), ball);
         }
 

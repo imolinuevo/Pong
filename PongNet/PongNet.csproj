@@ -89,6 +89,15 @@
   <ItemGroup>
     <None Include="Resources\SpaceWall.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PongBall.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IndustrialBack.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MyWall.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
