@@ -19,14 +19,16 @@ namespace PongNet
         private Rectangle ball;
         private int axisXSpeed;
         private int axisYSpeed;
+        private int points;
 
         public MainForm()
         {
             InitializeComponent();
             platform = new Rectangle(182, 400, 120, 40);
-            ball = new Rectangle(50, 50, 25, 25);
+            ball = new Rectangle(new Random().Next(50, 450), 20, 25, 25);
             axisXSpeed = 5;
             axisYSpeed = 5;
+            points = 0;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -34,7 +36,6 @@ namespace PongNet
             graphics = canvasPanel.CreateGraphics();
             timer.Interval = 60;
             timer.Tick += new EventHandler(timer_Tick);
-            timer.Start();
         }
 
         private void PaintCanvas(object sender, PaintEventArgs e)
@@ -74,7 +75,7 @@ namespace PongNet
                 axisYSpeed = 0;
                 timer.Stop();
 
-                var gameOver = MessageBox.Show("GAME OVER", "Message", MessageBoxButtons.OK);
+                var gameOver = MessageBox.Show("Your score: " + points, "Game Over", MessageBoxButtons.OK);
                 if (gameOver == System.Windows.Forms.DialogResult.OK)
                 {
                     Application.Restart();
@@ -83,6 +84,9 @@ namespace PongNet
             if (ball.IntersectsWith(platform))
             {
                 axisYSpeed -= 10;
+                points++;
+                CountLabel.Text = points.ToString();
+
             }
             ball.X += axisXSpeed;
             ball.Y += axisYSpeed;
@@ -92,6 +96,22 @@ namespace PongNet
         {
             MoveBall();
             Refresh();
+        }
+
+        private void Play_Click(object sender, EventArgs e)
+        {
+            timer.Start();
+            Play.Enabled = false;
+        }
+
+        private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
