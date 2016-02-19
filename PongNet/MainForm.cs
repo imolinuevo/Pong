@@ -27,7 +27,7 @@ namespace PongNet
             InitializeComponent();
             platform = new Rectangle(182, 400, 120, 40);
             ball = new Rectangle(new Random().Next(50, 450), 20, 25, 25);
-            SetSpeed(5);
+            SetSpeed(10);
             points = 0;
         }
 
@@ -55,14 +55,13 @@ namespace PongNet
         private void PaintCanvas(object sender, PaintEventArgs e)
         {
             graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            graphics.FillRectangle(new SolidBrush(Color.RoyalBlue), platform);
-            graphics.FillEllipse(new SolidBrush(Color.Red), ball);
+            graphics.FillRectangle(new SolidBrush(Color.DimGray), platform);
+            graphics.FillEllipse(new SolidBrush(Color.Black), ball);
         }
 
         private void MovePlatform(object sender, MouseEventArgs e)
         {
             platform.X = e.X - 60;
-            Refresh();
         }
 
         private void MoveBall()
@@ -135,25 +134,25 @@ namespace PongNet
         private void slowToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ResetGame();
-            SetSpeed(5);
+            SetSpeed(10);
         }
 
         private void mediumToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ResetGame();
-            SetSpeed(10);
+            SetSpeed(20);
         }
 
         private void fastToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ResetGame();
-            SetSpeed(15);
+            SetSpeed(30);
         }
 
         private void hardcoreToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ResetGame();
-            SetSpeed(20);
+            SetSpeed(40);
         }
     }
 }

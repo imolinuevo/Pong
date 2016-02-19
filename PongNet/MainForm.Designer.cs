@@ -29,49 +29,37 @@
         private void InitializeComponent()
         {
             this.canvasPanel = new System.Windows.Forms.Panel();
-            this.platformBox = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Play = new System.Windows.Forms.Button();
-            this.Score = new System.Windows.Forms.Label();
-            this.CountLabel = new System.Windows.Forms.Label();
             this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.speedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.slowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mediumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fastToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hardcoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutTheDeveloperToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.top10ScoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutTheDeveloperToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Play = new System.Windows.Forms.Button();
+            this.Score = new System.Windows.Forms.Label();
+            this.CountLabel = new System.Windows.Forms.Label();
+            this.platformBox = new System.Windows.Forms.PictureBox();
             this.canvasPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.platformBox)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.platformBox)).BeginInit();
             this.SuspendLayout();
             // 
             // canvasPanel
             // 
-            this.canvasPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.canvasPanel.BackColor = System.Drawing.Color.LightGray;
             this.canvasPanel.Controls.Add(this.platformBox);
             this.canvasPanel.Location = new System.Drawing.Point(0, 24);
             this.canvasPanel.Margin = new System.Windows.Forms.Padding(0);
             this.canvasPanel.Name = "canvasPanel";
-            this.canvasPanel.Size = new System.Drawing.Size(484, 525);
+            this.canvasPanel.Size = new System.Drawing.Size(484, 481);
             this.canvasPanel.TabIndex = 0;
-            // 
-            // platformBox
-            // 
-            this.platformBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.platformBox.Location = new System.Drawing.Point(0, 440);
-            this.platformBox.Margin = new System.Windows.Forms.Padding(0);
-            this.platformBox.Name = "platformBox";
-            this.platformBox.Size = new System.Drawing.Size(484, 40);
-            this.platformBox.TabIndex = 0;
-            this.platformBox.TabStop = false;
-            this.platformBox.Paint += new System.Windows.Forms.PaintEventHandler(this.PaintCanvas);
-            this.platformBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MovePlatform);
             // 
             // menuStrip1
             // 
@@ -96,55 +84,11 @@
             this.gameToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.gameToolStripMenuItem.Text = "&Game";
             // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutTheDeveloperToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "&Help";
-            // 
-            // Play
-            // 
-            this.Play.BackColor = System.Drawing.SystemColors.Control;
-            this.Play.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Play.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Play.Location = new System.Drawing.Point(50, 583);
-            this.Play.Margin = new System.Windows.Forms.Padding(0);
-            this.Play.Name = "Play";
-            this.Play.Size = new System.Drawing.Size(120, 40);
-            this.Play.TabIndex = 2;
-            this.Play.Text = "Play";
-            this.Play.UseVisualStyleBackColor = false;
-            this.Play.Click += new System.EventHandler(this.Play_Click);
-            // 
-            // Score
-            // 
-            this.Score.BackColor = System.Drawing.SystemColors.Control;
-            this.Score.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Score.Location = new System.Drawing.Point(279, 583);
-            this.Score.Name = "Score";
-            this.Score.Size = new System.Drawing.Size(94, 40);
-            this.Score.TabIndex = 3;
-            this.Score.Text = "Score";
-            this.Score.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // CountLabel
-            // 
-            this.CountLabel.BackColor = System.Drawing.SystemColors.Control;
-            this.CountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CountLabel.Location = new System.Drawing.Point(370, 583);
-            this.CountLabel.Name = "CountLabel";
-            this.CountLabel.Size = new System.Drawing.Size(80, 40);
-            this.CountLabel.TabIndex = 4;
-            this.CountLabel.Text = "0";
-            this.CountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // newGameToolStripMenuItem
             // 
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
             this.newGameToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.newGameToolStripMenuItem.Text = "New game";
             this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
             // 
@@ -191,20 +135,6 @@
             this.hardcoreToolStripMenuItem.Text = "Hardcore";
             this.hardcoreToolStripMenuItem.Click += new System.EventHandler(this.hardcoreToolStripMenuItem_Click);
             // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // aboutTheDeveloperToolStripMenuItem
-            // 
-            this.aboutTheDeveloperToolStripMenuItem.Name = "aboutTheDeveloperToolStripMenuItem";
-            this.aboutTheDeveloperToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.aboutTheDeveloperToolStripMenuItem.Text = "About the developer";
-            // 
             // top10ScoresToolStripMenuItem
             // 
             this.top10ScoresToolStripMenuItem.Name = "top10ScoresToolStripMenuItem";
@@ -220,28 +150,101 @@
             this.stopToolStripMenuItem.Text = "Stop";
             this.stopToolStripMenuItem.Click += new System.EventHandler(this.stopToolStripMenuItem_Click);
             // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutTheDeveloperToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "&Help";
+            // 
+            // aboutTheDeveloperToolStripMenuItem
+            // 
+            this.aboutTheDeveloperToolStripMenuItem.Name = "aboutTheDeveloperToolStripMenuItem";
+            this.aboutTheDeveloperToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.aboutTheDeveloperToolStripMenuItem.Text = "About the developer";
+            // 
+            // Play
+            // 
+            this.Play.BackColor = System.Drawing.SystemColors.Control;
+            this.Play.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Play.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Play.Location = new System.Drawing.Point(50, 534);
+            this.Play.Margin = new System.Windows.Forms.Padding(0);
+            this.Play.Name = "Play";
+            this.Play.Size = new System.Drawing.Size(120, 40);
+            this.Play.TabIndex = 2;
+            this.Play.Text = "Play";
+            this.Play.UseVisualStyleBackColor = false;
+            this.Play.Click += new System.EventHandler(this.Play_Click);
+            // 
+            // Score
+            // 
+            this.Score.BackColor = System.Drawing.SystemColors.Control;
+            this.Score.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Score.Location = new System.Drawing.Point(281, 534);
+            this.Score.Name = "Score";
+            this.Score.Size = new System.Drawing.Size(94, 40);
+            this.Score.TabIndex = 3;
+            this.Score.Text = "Score";
+            this.Score.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CountLabel
+            // 
+            this.CountLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.CountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CountLabel.Location = new System.Drawing.Point(370, 534);
+            this.CountLabel.Name = "CountLabel";
+            this.CountLabel.Size = new System.Drawing.Size(80, 40);
+            this.CountLabel.TabIndex = 4;
+            this.CountLabel.Text = "0";
+            this.CountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // platformBox
+            // 
+            this.platformBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.platformBox.Image = global::PongNet.Properties.Resources.Stripe;
+            this.platformBox.Location = new System.Drawing.Point(0, 440);
+            this.platformBox.Margin = new System.Windows.Forms.Padding(0);
+            this.platformBox.Name = "platformBox";
+            this.platformBox.Size = new System.Drawing.Size(484, 40);
+            this.platformBox.TabIndex = 0;
+            this.platformBox.TabStop = false;
+            this.platformBox.Paint += new System.Windows.Forms.PaintEventHandler(this.PaintCanvas);
+            this.platformBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MovePlatform);
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(484, 661);
+            this.BackgroundImage = global::PongNet.Properties.Resources.SpaceWall;
+            this.ClientSize = new System.Drawing.Size(484, 611);
             this.Controls.Add(this.CountLabel);
             this.Controls.Add(this.Score);
             this.Controls.Add(this.Play);
             this.Controls.Add(this.canvasPanel);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(500, 700);
-            this.MinimumSize = new System.Drawing.Size(500, 700);
+            this.MaximumSize = new System.Drawing.Size(500, 650);
+            this.MinimumSize = new System.Drawing.Size(500, 650);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pong";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.canvasPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.platformBox)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.platformBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
