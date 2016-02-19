@@ -19,6 +19,7 @@ namespace PongNet
         private Rectangle ball;
         private int axisXSpeed;
         private int axisYSpeed;
+        private int axisInvert;
         private int points;
 
         public MainForm()
@@ -26,9 +27,22 @@ namespace PongNet
             InitializeComponent();
             platform = new Rectangle(182, 400, 120, 40);
             ball = new Rectangle(new Random().Next(50, 450), 20, 25, 25);
-            axisXSpeed = 5;
-            axisYSpeed = 5;
+            SetSpeed(5);
             points = 0;
+        }
+
+        private void SetSpeed(int speed)
+        {
+            axisXSpeed = speed;
+            axisYSpeed = speed;
+            axisInvert = speed * 2;
+        }
+
+        public void ResetGame()
+        {
+            ball.Location = new Point(new Random().Next(50, 450), 20);
+            points = 0;
+            CountLabel.Text = points.ToString();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -55,24 +69,22 @@ namespace PongNet
         {
             if (ball.X + axisXSpeed < 0)
             {
-                axisXSpeed += 10;
+                axisXSpeed += axisInvert;
             }
-            if (ball.X + axisXSpeed >= platformBox.Width)
+            if (ball.X + axisXSpeed > platformBox.Width - ball.Width)
             {
-                axisXSpeed -= 10;
+                axisXSpeed -= axisInvert;
             }
             if (ball.Y + axisYSpeed < 0)
             {
-                axisYSpeed += 5;
+                axisYSpeed += axisInvert;
                 if (axisYSpeed == 0)
                 {
-                    axisYSpeed += 5;
+                    axisYSpeed += axisInvert;
                 }
             }
             if (ball.Y  >= platform.Y)
             {
-                axisXSpeed = 0;
-                axisYSpeed = 0;
                 timer.Stop();
 
                 var gameOver = MessageBox.Show("Your score: " + points, "Game Over", MessageBoxButtons.OK);
@@ -83,7 +95,7 @@ namespace PongNet
             }
             if (ball.IntersectsWith(platform))
             {
-                axisYSpeed -= 10;
+                axisYSpeed -= axisInvert;
                 points++;
                 CountLabel.Text = points.ToString();
 
@@ -96,6 +108,7 @@ namespace PongNet
         {
             MoveBall();
             Refresh();
+            Console.WriteLine("X speed: " + axisXSpeed + " Y speed: " + axisYSpeed);
         }
 
         private void Play_Click(object sender, EventArgs e)
@@ -112,6 +125,36 @@ namespace PongNet
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void stopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            timer.Stop();
+            Play.Enabled = true;
+        }
+
+        private void slowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ResetGame();
+            SetSpeed(5);
+        }
+
+        private void mediumToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ResetGame();
+            SetSpeed(10);
+        }
+
+        private void fastToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ResetGame();
+            SetSpeed(15);
+        }
+
+        private void hardcoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ResetGame();
+            SetSpeed(20);
         }
     }
 }

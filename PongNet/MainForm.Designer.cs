@@ -45,6 +45,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutTheDeveloperToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.top10ScoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.canvasPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.platformBox)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -89,6 +90,7 @@
             this.newGameToolStripMenuItem,
             this.speedToolStripMenuItem,
             this.top10ScoresToolStripMenuItem,
+            this.stopToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.gameToolStripMenuItem.Name = "gameToolStripMenuItem";
             this.gameToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
@@ -154,7 +156,7 @@
             this.fastToolStripMenuItem,
             this.hardcoreToolStripMenuItem});
             this.speedToolStripMenuItem.Name = "speedToolStripMenuItem";
-            this.speedToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.speedToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.speedToolStripMenuItem.Text = "Speed";
             // 
             // slowToolStripMenuItem
@@ -163,6 +165,7 @@
             this.slowToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.slowToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.slowToolStripMenuItem.Text = "Slow";
+            this.slowToolStripMenuItem.Click += new System.EventHandler(this.slowToolStripMenuItem_Click);
             // 
             // mediumToolStripMenuItem
             // 
@@ -170,6 +173,7 @@
             this.mediumToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
             this.mediumToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.mediumToolStripMenuItem.Text = "Medium";
+            this.mediumToolStripMenuItem.Click += new System.EventHandler(this.mediumToolStripMenuItem_Click);
             // 
             // fastToolStripMenuItem
             // 
@@ -177,6 +181,7 @@
             this.fastToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
             this.fastToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.fastToolStripMenuItem.Text = "Fast";
+            this.fastToolStripMenuItem.Click += new System.EventHandler(this.fastToolStripMenuItem_Click);
             // 
             // hardcoreToolStripMenuItem
             // 
@@ -184,6 +189,7 @@
             this.hardcoreToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
             this.hardcoreToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.hardcoreToolStripMenuItem.Text = "Hardcore";
+            this.hardcoreToolStripMenuItem.Click += new System.EventHandler(this.hardcoreToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -205,6 +211,14 @@
             this.top10ScoresToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
             this.top10ScoresToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.top10ScoresToolStripMenuItem.Text = "Top 10 scores";
+            // 
+            // stopToolStripMenuItem
+            // 
+            this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
+            this.stopToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
+            this.stopToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.stopToolStripMenuItem.Text = "Stop";
+            this.stopToolStripMenuItem.Click += new System.EventHandler(this.stopToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -252,6 +266,7 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutTheDeveloperToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem top10ScoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stopToolStripMenuItem;
     }
 }
 
