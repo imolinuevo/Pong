@@ -168,7 +168,7 @@ namespace PongNet
         private void top10ScoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TopScores topScores = new TopScores();
-            topScores.Show();
+            topScores.ShowDialog();
         }
     }
 

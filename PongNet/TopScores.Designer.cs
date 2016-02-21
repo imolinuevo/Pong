@@ -76,8 +76,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "TopScores";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pong Top Scores";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 
