@@ -155,6 +155,7 @@
             this.top10ScoresToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
             this.top10ScoresToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.top10ScoresToolStripMenuItem.Text = "Top 10 scores";
+            this.top10ScoresToolStripMenuItem.Click += new System.EventHandler(this.top10ScoresToolStripMenuItem_Click);
             // 
             // stopToolStripMenuItem
             // 
@@ -185,6 +186,7 @@
             this.aboutTheDeveloperToolStripMenuItem.Name = "aboutTheDeveloperToolStripMenuItem";
             this.aboutTheDeveloperToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.aboutTheDeveloperToolStripMenuItem.Text = "About the developer";
+            this.aboutTheDeveloperToolStripMenuItem.Click += new System.EventHandler(this.aboutTheDeveloperToolStripMenuItem_Click);
             // 
             // Play
             // 
@@ -234,6 +236,7 @@
             this.Controls.Add(this.Play);
             this.Controls.Add(this.canvasPanel);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;

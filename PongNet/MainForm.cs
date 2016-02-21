@@ -12,8 +12,6 @@ using System.Runtime.InteropServices;
 namespace PongNet
 {
 
-    
-
     public partial class MainForm : Form
     {
 
@@ -160,6 +158,16 @@ namespace PongNet
         {
             ResetGame();
             SetSpeed(40);
+        }
+
+        private void aboutTheDeveloperToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Created by Iñigo Molinuevo in 2016, find this proyect in: https://github.com/imolinuevo/Pong", "About the developer", MessageBoxButtons.OK);
+        }
+
+        private void top10ScoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
