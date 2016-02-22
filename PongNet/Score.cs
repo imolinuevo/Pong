@@ -15,6 +15,6 @@ namespace PongNet
     public partial class Score
     {
         public int Id { get; set; }
-        public string Value { get; set; }
+        public int Value { get; set; }
     }
 }

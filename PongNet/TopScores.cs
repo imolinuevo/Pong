@@ -54,7 +54,7 @@ namespace PongNet
                     else
                     {
                         if (resultArray.Length > j)
-                            content[i, j].Text = resultArray[j].Value;
+                            content[i, j].Text = resultArray[j].Value.ToString();
                         else
                             content[i, j].Text = "-";
                     }

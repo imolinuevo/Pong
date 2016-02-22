@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="9eb4d55a5a8b4159a02e39790d8b13ad" Name="Diagram1" >
-        <EntityTypeShape EntityType="PongDBModel.Score" Width="1.5" PointX="4.5" PointY="2.25" />
+        <EntityTypeShape EntityType="PongDBModel.Score" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

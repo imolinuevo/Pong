@@ -27,11 +27,11 @@ namespace PongNet
     
         public virtual DbSet<Score> ScoreSet { get; set; }
 
-        public bool uniqueValue(string value)
+        public bool uniqueValue(int value)
         {
             foreach (Score score in ScoreSet)
             {
-                if (score.Value.Equals(value))
+                if (score.Value == value)
                     return false;
             }
             return true;
