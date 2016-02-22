@@ -95,10 +95,13 @@ namespace PongNet
                 if (result == System.Windows.Forms.DialogResult.OK)
                 {
                     PongDBEntities dbe = new PongDBEntities();
-                    Score score = new PongNet.Score();
-                    score.Value = points.ToString();
-                    dbe.ScoreSet.Add(score);
-                    dbe.SaveChanges();
+                    if (dbe.uniqueValue(points.ToString()))
+                    {
+                        Score score = new PongNet.Score();
+                        score.Value = points.ToString();
+                        dbe.ScoreSet.Add(score);
+                        dbe.SaveChanges();
+                    }
                     Application.Restart();
                 }
             }

@@ -31,13 +31,33 @@ namespace PongNet
 
         public Label[,] getContent()
         {
+            PongDBEntities dbe = new PongDBEntities();
+            IQueryable<Score> result = dbe.ScoreSet.OrderByDescending(n => n.Value).Take(10);
+            Score[] resultArray = new Score[result.Count()];
+            int count = 0;
+            foreach (Score score in result)
+            {
+                resultArray[count] = score;
+                count++;
+            }
             Label[,] content = new Label[scoreTable.ColumnCount, scoreTable.RowCount];
             for (int i = 0; i < scoreTable.ColumnCount; i++)
             {
                 for (int j = 0; j < scoreTable.RowCount; j++)
                 {
                     content[i, j] = new Label();
-                    content[i, j].Text = "asd";
+                    if (i == 0)
+                    {
+                        int order = j + 1;
+                        content[i, j].Text = order + ".";
+                    }
+                    else
+                    {
+                        if (resultArray.Length > j)
+                            content[i, j].Text = resultArray[j].Value;
+                        else
+                            content[i, j].Text = "-";
+                    }
                 }
             }
             return content;

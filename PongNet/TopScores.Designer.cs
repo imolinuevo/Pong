@@ -35,11 +35,11 @@
             // 
             // scoreTable
             // 
-            this.scoreTable.ColumnCount = 3;
-            this.scoreTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33332F));
-            this.scoreTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.scoreTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.scoreTable.Location = new System.Drawing.Point(30, 100);
+            this.scoreTable.ColumnCount = 2;
+            this.scoreTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.scoreTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.scoreTable.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreTable.Location = new System.Drawing.Point(60, 100);
             this.scoreTable.Margin = new System.Windows.Forms.Padding(0);
             this.scoreTable.Name = "scoreTable";
             this.scoreTable.RowCount = 10;
@@ -53,7 +53,7 @@
             this.scoreTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.scoreTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.scoreTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.scoreTable.Size = new System.Drawing.Size(300, 300);
+            this.scoreTable.Size = new System.Drawing.Size(235, 300);
             this.scoreTable.TabIndex = 0;
             // 
             // label1
