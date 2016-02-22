@@ -94,6 +94,11 @@ namespace PongNet
                 DialogResult result = MessageBox.Show("Your score: " + points, "Game Over", MessageBoxButtons.OK);
                 if (result == System.Windows.Forms.DialogResult.OK)
                 {
+                    PongDBEntities dbe = new PongDBEntities();
+                    Score score = new PongNet.Score();
+                    score.Value = points.ToString();
+                    dbe.ScoreSet.Add(score);
+                    dbe.SaveChanges();
                     Application.Restart();
                 }
             }
