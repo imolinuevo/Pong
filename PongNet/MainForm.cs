@@ -95,7 +95,7 @@ namespace PongNet
                 if (result == System.Windows.Forms.DialogResult.OK)
                 {
                     PongDBEntities dbe = new PongDBEntities();
-                    if (dbe.uniqueValue(points))
+                    if (uniqueValue(points))
                     {
                         Score score = new PongNet.Score();
                         score.Value = points;
@@ -177,6 +177,17 @@ namespace PongNet
         {
             TopScores topScores = new TopScores();
             topScores.ShowDialog();
+        }
+
+        private bool uniqueValue(int value)
+        {
+            PongDBEntities edb = new PongDBEntities();
+            foreach (Score score in edb.ScoreSet)
+            {
+                if (score.Value == value)
+                    return false;
+            }
+            return true;
         }
     }
 
